@@ -20,6 +20,7 @@ setup(
         'falcon_generic_handler',
     ],
     install_requires=[
+        'cython',
         'falcon',
         'simplejson',
         'sqlalchemy',
