@@ -11,7 +11,7 @@ except ImportError:
 
 setup(
     name='falcon-generic-handler',
-    version='0.0.1',
+    version='0.0.2',
     description=u'',
     author='Jeongsoo Park',
     author_email='toracle@gmail.com',
@@ -22,6 +22,7 @@ setup(
     install_requires=[
         'falcon',
         'simplejson',
+        'sqlalchemy',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',

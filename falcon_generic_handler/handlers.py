@@ -23,7 +23,7 @@ class JsonGenericHandler(object):
             if not self.serializer_class:
                 raise exceptions.ImproperlyConfigured('You should assign serializer_class for {}'.format(type(self)))
 
-            if not self.serializer_class:
+            if not self.model_base:
                 raise exceptions.ImproperlyConfigured('You should assign model_base for {}'.format(type(self)))
 
             final_response = encoders.sqlalchemy_json_encode({'data': _response}, self.model_base, serializer_class=self.serializer_class)
