@@ -26,7 +26,7 @@ class JsonGenericHandler(object):
             if not self.model_base:
                 raise exceptions.ImproperlyConfigured('You should assign model_base for {}'.format(type(self)))
 
-            final_response = encoders.sqlalchemy_json_encode(_response, self.model_base, serializer_class=self.serializer_class)
+            final_response = encoders.sqlalchemy_json_encode(_response, self.model_base, serializer_class=self.serializer_class, serializer_context={'request': request})
             response.status = falcon.HTTP_200
             response.body = final_response
             response.set_header('Content-Type', 'application/json')
